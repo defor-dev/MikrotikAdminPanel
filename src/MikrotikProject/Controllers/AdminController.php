@@ -97,7 +97,7 @@ class AdminController
 
                 $newSubscriber = new Subscriber();
                 $newSubscriber::createSubscriber($_POST, $url);
-                $this->view->renderHtml('successful/create.php');
+//                $this->view->renderHtml('successful/create.php');
             } catch (InvalidArgumentException $e)
             {
                 $this->view->renderHtml('error/404.php', ['error' => $e->getMessage()]);

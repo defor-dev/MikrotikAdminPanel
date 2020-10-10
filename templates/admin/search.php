@@ -18,20 +18,27 @@
                 </form>
               </div>
             </div>
-            <div class="admin__button search__button-1">
-              <a href="torch/<?= $subscriber['id'] ?>">
-                <div class="admin__button-text">
-                  <p>Проверить трафик</p>
-                </div>
-              </a>
-            </div>
-            <div class="admin__button search__button-2">
-              <a href="drop/<?= $subscriber['id'] ?>">
-                <div class="admin__button-text">
-                  <p>Удалить абонента</p>
-                </div>
-              </a>
-            </div>
+            <?php if ($subscriber['id'] == null): ?>
+              <div class="msg error">
+                <h3 style="text-align: center">Абонент не найден</h3>
+              </div>
+            <?php endif; ?>
+            <?php if ($subscriber['id'] != null): ?>
+              <div class="admin__button search__button-1">
+                <a href="torch/<?= $subscriber['id'] ?>/">
+                  <div class="admin__button-text">
+                    <p>Проверить трафик</p>
+                  </div>
+                </a>
+              </div>
+              <div class="admin__button search__button-2">
+                <a href="drop/<?= $subscriber['id'] ?>/">
+                  <div class="admin__button-text">
+                    <p>Удалить абонента</p>
+                  </div>
+                </a>
+              </div>
+            <?php endif; ?>
             <div class="admin__button search__button-1">
               <a href="http://localhost/MikrotikAdminPanel/">
                 <div class="admin__button-text">
@@ -53,16 +60,7 @@
             <p class="search__info">Адрес: <?= $subscriber['fact_address'] ?></p>
             <p class="search__info">IP: <?= $subscriber['ip'] ?></p>
             <p class="search__info">Порт: <?= $subscriber['port'] ?></p>
-              <?php
-//               echo "<br><br>".'Диапозон айпи адресов пользователя: ' .$subscriber['address'];
-//               echo  "<br><br>".'Маска пользователя: ' . $subscriber['mask'];
-//               echo  "<br><br>".'Адрес пользователя: ' . $subscriber['fact_address'] ;
-//               echo  "<br><br>".'Имя пользователя пользователя: ' . $subscriber['name'] ;
-//               echo  "<br><br>".'Айпи адрес пользователя: ' . $subscriber['ip'];
-//               echo  "<br><br>".'Порт пользователя: ' . $subscriber['port']; ?>
-          <?php else: ?>
-          <br><br>пустая строка или такого абонента нет
-          <?php endif; ?>
         </div>
+          <?php endif; ?>
     </div>
 <?php include __DIR__ . '/../footer.php'; ?>

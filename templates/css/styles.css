@@ -45,6 +45,14 @@ h1 {
 h2 {
     font-size: 26px;
 }
+.success h3 {
+    color: #2CB67D;
+    font-size: 32px;
+}
+.error h3 {
+    color: #B62C2C;
+    font-size: 32px;
+}
 a {
     color: #FFFFFE;
     text-decoration: none;
@@ -63,6 +71,7 @@ input {
 }
 button {
     color: #FFFFFE;
+    font: inherit;
     background: none;
     border: none;
 }
@@ -73,6 +82,9 @@ p.error {
     text-align: center;
 }
 
+.msg {
+    margin-top: 30px;
+}
 .clickable {
     color: #FFFFFE;
     border: 3px solid #FFFFFE;
