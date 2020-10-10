@@ -73,11 +73,11 @@ p.error {
     text-align: center;
 }
 
-.clicked {
+.clickable {
     color: #FFFFFE;
     border: 3px solid #FFFFFE;
 }
-.no-clicked {
+.no-clickable {
     color: #939393;
     border: 3px solid #939393;
     pointer-events: none; /* делаем элемент неактивным для взаимодействия */

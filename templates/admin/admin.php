@@ -7,7 +7,7 @@
         <div class="title">
           <h1>Поиск абонента</h1>
         </div>
-        <div id="app">
+        <div id="search">
           <div class="form">
             <form action="/MikrotikAdminPanel/admin/search/" method="post">
               <input type="text" id="txt" placeholder="" name="name" v-model="txt">
